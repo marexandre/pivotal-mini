@@ -18,6 +18,8 @@ A simple application that uses [Pivotal Tracker API](https://www.pivotaltracker.
 - Run `npm install`
 
 ### Develop
+Rename `congig.sample.yml` to `congig.yml` and add your Pivotal projects ID's, also if necessary update redis setting.
+
 Recommended to install [nodemon](http://nodemon.io/), nodemon is a utility that will monitor for any changes in your source and automatically restart your server.
 To start the dev server run this command:
 
@@ -33,4 +35,4 @@ node bin/www
 Access `localhost:4649` in you browser :pray:
 
 ### Heroku
-This App is made to run on Heroku, but you can serve it on your server too.
+This App is made to run on Heroku, but you can serve it on your server too. Read more [here](https://devcenter.heroku.com/articles/git) for how to deploy to Heroku.
