@@ -1,0 +1,43 @@
+redis:
+  host: 127.0.0.1
+  port: 6381
+
+features:
+  project: 123456 # dummy project id, use your own
+  projects:
+    - 123456 # dummy project id, use your own
+    - 654321 # dummy project id, use your own
+  template:
+    title: As a(n) %s, I want %s so that %s
+    description: |
+      # What
+      %s
+
+      # Why
+      %s
+
+      # Expected impact
+      %s
+
+      # Acceptance Criteria [To be updated by Product Owner]
+
+bugs:
+  project: 987650 # dummy project id, use your own
+  projects:
+    - 987650 # dummy project id, use your own
+  template:
+    title: %s
+    description: |
+      # Reproduction Steps
+      %s
+
+      # Actual Results
+      %s
+
+      # Expected Results
+      %s
+
+      # Reproduction Rate
+      %s
+
+      # Related / Dependencies
