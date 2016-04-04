@@ -1,0 +1,38 @@
+.signin {
+  &.card {
+    margin: 0 auto;
+    max-width: 360px;
+  }
+
+  > h4 {
+    margin: 0 0 18px 0;
+  }
+
+  .user,
+  .pass {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 12px 6px;
+  }
+  .pass {
+    margin-top: -1px;
+  }
+  .user:focus,
+  .pass:focus {
+    position: relative;
+    z-index: 10;
+  }
+  .btn {
+    margin-top: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .forgot-password {
+    color: #999;
+    font-size: 14px;
+    text-align: right;
+    margin-left: 2px;
+  }
+}

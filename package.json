@@ -1,0 +1,39 @@
+{
+  "name": "pivotal-mini",
+  "version": "0.0.1",
+  "description": "Minimalistic app for posting features or bugs to picotal",
+  "homepage": "https://github.com/marexandre/pivotal-mini",
+  "author": "Alexandre Kirillov <alexandre.kirillov@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.2.3",
+    "body-parser": "~1.13.2",
+    "connect-redis": "^3.0.1",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "express-ejs-layouts": "^2.0.0",
+    "express-session": "~1.12.1",
+    "express-validator": "^2.18.0",
+    "morgan": "~1.6.1",
+    "passport": "~0.3.2",
+    "passport-custom": "~1.0.1",
+    "pivotaltracker": "^0.1.4",
+    "postcss": "^4.1.16",
+    "postcss-cssnext": "^2.4.0",
+    "postcss-import": "^8.0.2",
+    "postcss-middleware": "^1.0.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.2.0",
+    "q": "^1.4.1",
+    "redis": "^2.3.1",
+    "request": "^2.66.0",
+    "rootpath": "^0.1.2",
+    "serve-favicon": "~2.3.0",
+    "yamljs": "^0.2.5"
+  }
+}

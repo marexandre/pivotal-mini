@@ -1,0 +1,121 @@
+<div class="card features">
+  <div class="title-wrap clearfix">
+    <h2 class="pull-left">Features Requested</h2>
+    <% include ../partials/user_select %>
+    <button class="btn btn-primary pull-right" id="btn-create-feature">Request Feature</button>
+  </div>
+
+  <div class="loading-panel">
+    <div class="spinner">
+      <div class="graphic"></div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Updated At</th>
+        <th class="text-center">Released</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal create-story fade" id="featureRequestModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Request Feature</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/api/create_story" method="post">
+          <div class="form-group row story-title">
+            <div class="col-xs-12 col-sm-5 as-an">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">As a(n)</span>
+                <select class="form-control" name="titleWho">
+                  <option value=""></option>
+                  <option value="Translator">Translator</option>
+                  <option value="Customer / Enterprise">Customer / Enterprise</option>
+                  <option value="Customer / Reseller">Customer / Reseller</option>
+                  <option value="Employee / Marketing">Employee / Marketing</option>
+                  <option value="Employee / Sales">Employee / Sales</option>
+                  <option value="Employee / Finance">Employee / Finance</option>
+                  <option value="Employee / Support">Employee / Support</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-7 i-want">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="hidden-xs">, </span>I want</span>
+                <input type="text" class="form-control" name="titleWhat" placeholder="e.g. order form attachments">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">so that</span>
+                <input type="text" class="form-control" name="titleWhy" placeholder="e.g. I can give more context to translators">
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="form-group">
+            <label class="control-label">What</label>
+            <textarea class="form-control" name="detailWhat" placeholder="A brief description of the desired functionality"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Why</label>
+            <textarea class="form-control" name="detailWhy" placeholder="The reason this story is valuable"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Expected Impact</label>
+            <textarea class="form-control" name="detailImpact" placeholder="e.g. revenue increase, number of requesters satisfied, hours of manual work automated"></textarea>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary create-btn" data-loading-text="Submitting...">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function() {
+
+  var type = 'feature';
+  var $features = $('.features');
+  var projectList = [<%= features %>];
+
+  var $modal = $('#featureRequestModal');
+  $modal.modal({
+    backdrop: 'static',
+    show: false,
+  });
+
+  $('#btn-create-feature').on('click', function(e) {
+    e.preventDefault();
+    $modal.modal('show');
+  });
+
+  $(window).on('on.modal.submit.success', function() {
+    loadStroyRequestList($features, projectList, type);
+  });
+  loadStroyRequestList($features, projectList, type);
+
+  getUsersList($features, projectList, type);
+});
+</script>

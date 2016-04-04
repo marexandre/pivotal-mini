@@ -1,0 +1,182 @@
+/*--------------------
+  Var's
+---------------------*/
+$gengo-green: #1cad7e;
+
+$link-base-color: $gengo-green;
+$link-hover-color: #116b4e;
+
+$screen-sm: 992px;
+$screen-xs: 768px;
+
+/*--------------------
+  Commont
+---------------------*/
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  /*padding: 26px;*/
+  padding-bottom: 100px;
+}
+
+::placeholder {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+a {
+  color: $link-base-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &.danger {
+    color: #ea5e47;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+select {
+  outline: none;
+}
+
+td.ellipsis {
+  color: $link-base-color;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*--------------------
+  Header
+---------------------*/
+header.navbar {
+  background-color: #fff;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  .icon-bar {
+    background-color: #333;
+  }
+
+  .navbar-nav .active a {
+    color: #333;
+  }
+
+  .navbar-text {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+}
+
+body > .container {
+  margin-top: 50px;
+}
+
+
+/*--------------------
+  Buttons
+---------------------*/
+.btn-primary {
+  background-color: $gengo-green;
+  border-color: $gengo-green;
+
+  &:hover,
+  &.disabled:hover,
+  &:focus,
+  &.disabled:focus,
+  &:active,
+  &.disabled:active,
+  &:active:focus {
+    background-color: color($gengo-green saturation(- 10%) blackness(+ 5%));
+    border-color: color($gengo-green saturation(- 10%) blackness(+ 5%));
+    outline: none;
+  }
+}
+
+
+/*--------------------
+  Modal
+---------------------*/
+.modal-header.alert-success,
+.modal-header.alert-danger {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/*--------------------
+  Form
+---------------------*/
+.form-group {
+  margin-bottom: 18px;
+
+  .btn:focus,
+  .btn:active,
+  input:focus,
+  input:active,
+  textarea:focus,
+  textarea:active,
+  .form-control:focus {
+    border-color: #999;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .control-label > .small {
+    color: #737373;
+    font-weight: normal;
+    margin-left: 12px;
+  }
+}
+
+.control-label {
+  margin-bottom: 12px;
+}
+
+.form-control.error {
+  background-color: #fff6f6;
+  border-color: #e0b4b4;
+}
+
+/*--------------------
+  Card
+---------------------*/
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .075);
+  padding: 24px;
+
+  > h1,
+  > h3,
+  > h2 {
+    margin-bottom: 18px;
+    margin-top: 0;
+  }
+}
+
+@import "";
+@import "table.css";
+@import "modal.css";
+@import "loader.css";
+@import "signin.css";
+@import "feature-bug-page.css";

@@ -1,0 +1,138 @@
+.bugs,
+.features {
+  position: relative;
+
+  .dropdown-user-select {
+    margin-left: 16px;
+    float: left;
+
+    .dropdown-title {
+      padding-right: 3px;
+    }
+    .dropdown-menu > li > a {
+      padding: 1px 18px;
+      font-size: 13px;
+    }
+  }
+
+  .title-wrap {
+    margin-bottom: 16px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .no-results {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .released {
+    background-color: #efe;
+  }
+
+  /*.requested {
+    background-color: #efefef;
+  }*/
+
+  .unknown {
+    color: #999;
+  }
+
+  .bugs {
+    margin-top: 50px;
+  }
+
+  .status {
+    text-transform: capitalize;
+  }
+
+  .label {
+    margin-right: 8px;
+    padding: 2px 4px;
+  }
+}
+
+.bugs .bugs-average-timetable {
+  margin-bottom: 18px;
+}
+
+
+/*--------------------
+  Create story page
+---------------------*/
+.modal.create-story {
+  .story-title {
+    .input-group-addon {
+      background-color: inherit;
+      border: 0;
+      color: inherit;
+      font-size: inherit;
+      padding: 0 6px 0 0;
+    }
+    .form-control {
+      border-radius: 3px;
+    }
+
+    .as-an,
+    .i-want {
+      margin-bottom: 12px;
+    }
+    .as-an {
+      padding-right: 15px;
+
+      @media (min-width: $screen-xs) {
+        padding-right: 6px;
+      }
+    }
+    .i-want {
+      padding-right: 15px;
+
+      @media (min-width: $screen-xs) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/*--------------------
+  Create story page
+---------------------*/
+.modal.create-bug {
+  .isP0 {
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 0;
+
+    .control-label {
+      margin-bottom: 6px;
+    }
+    .checkbox,
+    .help-block {
+      margin: 0;
+    }
+
+    .mt {
+      margin-top: 12px;
+    }
+
+    .checkbox {
+      label { padding-left: 24px; }
+      input { margin-left: -24px; }
+      span { margin-top: 2px; }
+    }
+  }
+
+  .isP0.warning,
+  .isP0.warning2 {
+    background-color: #ea5e47;
+    color: #fff;
+
+    .help-block {
+      color: #fff;
+    }
+  }
+
+}

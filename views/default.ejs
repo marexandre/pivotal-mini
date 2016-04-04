@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/vender/css/bootstrap.min.css" />
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/app.css" />
+  <% if (title) { %>
+  <title><%= title %> | Pivotal Mini</title>
+  <% } else { %>
+  <title>Pivotal Mini</title>
+  <% } %>
+  <script src="/vender/js/jquery-2.1.4.min.js"></script>
+  <script src="/vender/js/bootstrap-3.3.6.min.js"></script>
+  <script src="/vender/js/autosize.min.js"></script>
+  <script src="/javascripts/app.js"></script>
+</head>
+<body>
+
+  <% if (header) { %>
+    <% include ./partials/header %>
+  <% } %>
+
+  <div class="container"><%-body%></div>
+
+</body>
+</html>

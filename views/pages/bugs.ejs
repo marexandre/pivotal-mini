@@ -1,0 +1,115 @@
+<div class="card bugs">
+  <div class="title-wrap clearfix">
+    <h2 class="pull-left">Bugs Reported</h2>
+    <% include ../partials/user_select %>
+    <button class="btn btn-primary pull-right" id="btn-create-bug">Report Bug</button>
+  </div>
+
+  <div class="loading-panel">
+    <div class="spinner">
+      <div class="graphic"></div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Updated At</th>
+        <th class="text-center">Released</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal create-bug fade" id="bugReportModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Bug Report</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/api/create_bug" method="post">
+          <div class="form-group">
+            <label class="control-label">Title</label>
+            <input class="form-control" name="title" placeholder="<who> + <symptom> + <issue>">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Area</label>
+            <select class="form-control" name="productArea">
+              <option value="">---</option>
+              <option value="api">API</option>
+              <option value="order-form">Order Form</option>
+              <option value="workbench">Workbench</option>
+              <option value="admin">Admin</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Reproduction Steps</label>
+            <textarea class="form-control" name="reproductionSteps" placeholder="What steps did you take before encountering the issue?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Actual Results</label>
+            <textarea class="form-control" name="actualResults" placeholder="What actually happened?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Expected Results</label>
+            <textarea class="form-control" name="expectedResults" placeholder="What did you expect to happen?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Reproduction Rate</label>
+            <select class="form-control" name="reproductionRate">
+              <option value="">---</option>
+              <option value="Unsure">Unsure</option>
+            <% for (var i = 1; i <= 10; i++) { %>
+              <option value="<%= i * 10 %>%"><%= i * 10 %>%</option>
+            <% } %>
+            </select>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary create-btn" data-loading-text="Submitting...">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function() {
+  var type = 'bug';
+  var $bugs = $('.bugs');
+  var projectList = [<%= bugs %>];
+
+  var $modal = $('#bugReportModal');
+  $modal.modal({
+    backdrop: 'static',
+    show: false,
+  })
+
+  $('#btn-create-bug').on('click', function(e) {
+    e.preventDefault();
+    $modal.modal('show');
+  });
+
+  $(window).on('on.modal.submit.success', function() {
+    loadStroyRequestList($bugs, projectList, type);
+  });
+  loadStroyRequestList($bugs, projectList, type);
+
+  getUsersList($bugs, projectList, type);
+});
+</script>

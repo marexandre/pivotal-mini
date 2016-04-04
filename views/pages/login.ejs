@@ -1,0 +1,25 @@
+<% if (message) { %>
+  <div class="row">
+    <div class="alert alert-danger col-md-6 col-md-offset-3" role="alert"><%= message %></div>
+  </div>
+<% } %>
+
+<div class="card signin">
+  <h4>Sign in with your Pivotal account</h4>
+  <form action="/login" method="post">
+
+    <div class="form-group row">
+      <div class="col-md-12">
+        <div class="input-group">
+          <input class="user form-control" type="text" name="email" placeholder="email">
+          <input class="pass form-control" type="password" name="password" placeholder="password">
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.pivotaltracker.com/signin/passwords/new?username=" class="forgot-password">Forgotten your password?</a>
+
+    <button class="btn btn-primary btn-block" type="submit" name="button">Sign in</button>
+
+  </form>
+</div>

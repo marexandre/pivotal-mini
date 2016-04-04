@@ -1,0 +1,28 @@
+
+.modal {
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 16px 24px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .input-group {
+    .checkbox {
+      margin-left: 4px;
+    }
+    .checkbox:first-child {
+      margin-top: 0;
+    }
+    .checkbox:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn {
+    padding: 8px 24px;
+  }
+}

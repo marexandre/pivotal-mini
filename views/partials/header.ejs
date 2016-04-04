@@ -1,0 +1,32 @@
+<header class="navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pv-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <nav id="pv-navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li <% if (active == 'features') { %> class="active"<% } %>>
+            <a href="/features">Features</a>
+        </li>
+        <li <% if (active == 'bugs') { %> class="active" <% } %>>
+          <a href="/bugs">Bugs</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+      <% if (userName) { %>
+        <li><p class="navbar-text"><%= userName %></p></li>
+      <% } %>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

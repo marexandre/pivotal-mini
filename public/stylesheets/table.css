@@ -1,0 +1,12 @@
+.table {
+  margin-bottom: 0;
+
+  thead > tr:first-child {
+    > th:nth-child(1) {
+      width: 30px;
+    }
+    > th:nth-child(2) {
+      width: 63%;
+    }
+  }
+}
